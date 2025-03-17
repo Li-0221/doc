@@ -290,6 +290,11 @@ trim_trailing_whitespace = false # 关闭末尾空格修剪
 |               czg               |               交互式命令行工具生成标准化的 git commit message                |
 |             cz-git              |   一款工程性更强，轻量级，高度自定义，标准输出格式的 **commitize** 适配器    |
 
+!>在 pnpm 之后会执行`husky install` ，如果输出如下，表示没有 git 文件。此时就不会有 git 提交检查
+如果后续提交了 git，想要有校验，需要重新`pnpm i`或者`husky install`
+
+![alt text](../../images/image1.png)
+
 ### 1、husky（操作 git 钩子的工具）：
 
 > **安装：**
