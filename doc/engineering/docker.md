@@ -2,6 +2,8 @@
 
 Dockerfile 中的构建、生产阶段是分离的
 
+服务器中安装 [docker](https://docs.docker.com/engine/install/)
+
 # 前端
 
 ## Dockerfile
