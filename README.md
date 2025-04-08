@@ -1,23 +1,3 @@
-# Vue UI 库
-
-## Element
-
-国内最流行的 Vue UI 组件库，文档完整，支持在 Vue3 下使用。
-
-https://element.eleme.cn/#/zh-CN
-
-## vant
-
-有赞公司旗下的开源组件库，适用于移动端开发。组件齐全，使用简单，UI 设计也非常漂亮。
-
-https://youzan.github.io/vant/#/zh-CN
-
-## antdv
-
-Ant Design 的 Vue 实现，开发和服务于企业级后台产品。
-
-https://www.antdv.com/components/overview-cn
-
 # Vue 常用工具
 
 ## awesome-vue
@@ -31,6 +11,10 @@ https://github.com/vuejs/awesome-vue
 VueUse 是一组基于 Composition API 的实用函数。
 
 https://vueuse.org/guide/
+
+## vue-json-schema-form
+
+https://vue-json-schema-form.lljj.me/
 
 ## vue-virtual-scroller
 
