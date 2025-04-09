@@ -12,7 +12,6 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "doc": "docsify serve -p 4700",
     "start": "docsify start . -c ssr.config.js",
     "deploy": "now -p"
   },
