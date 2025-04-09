@@ -1,12 +1,31 @@
 {
   "name": "my-doc-li",
   "version": "1.0.0",
-  "description": "",
+  "description": "小李的文档，记录一些学习的知识",
+  "keywords": [
+    "个人文档",
+    "文档",
+    "docsify",
+    "博客"
+  ],
+  "author": "li",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "doc": "docsify serve -p 4700"
+    "doc": "docsify serve -p 4700",
+    "start": "docsify start . -c ssr.config.js",
+    "deploy": "now -p"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "files": [
+    "docs"
+  ],
+  "docsify": {
+    "config": {
+      "basePath": "https://li-0221.github.io/doc",
+      "loadSidebar": true,
+      "loadNavbar": true,
+      "coverpage": true,
+      "name": "docsify"
+    }
+  }
 }
