@@ -5,8 +5,6 @@
 - 春日雨夏蝉鸣，明天是个好天气
 -
 
-[AI 站群](http://六点半开机.com)
+[AI 站群](https://六点半开机.com)
 [Git Hub](https://github.com/Li-0221)
 [Get Started](/README.md)
-
-<!-- [AI Chat](https://github.com/Li-0221) -->
