@@ -6,5 +6,6 @@
 -
 
 [AI 站群](https://六点半开机.com)
+[熊猫聊天](https://chat.六点半开机.com)
 [Git Hub](https://github.com/Li-0221)
 [Get Started](/README.md)
