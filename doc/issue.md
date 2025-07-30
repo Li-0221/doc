@@ -1,5 +1,30 @@
 !>持续更新。。。
 
+# Nuxt
+
+## Nuxt UI 的 UIcon
+
+在使用本地图标时
+
+当 `ssr:false` 时，UIcon 会提示没有找到图标。因为图标默认是从服务端渲染弄出来的。
+
+需要设置 provider 为 none 或者 iconify
+
+相关 issue https://github.com/nuxt/icon/issues/178
+
+```ts
+//  nuxt.config.ts
+  icon: {
+    provider: "none",
+    customCollections: [
+      {
+        prefix: "ai",
+        dir: "./app/assets/icons"
+      }
+    ]
+  },
+```
+
 # vite
 
 ## base
