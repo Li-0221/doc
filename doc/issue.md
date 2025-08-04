@@ -10,6 +10,8 @@
 
 需要设置 provider 为 none 或者 iconify
 
+建议设置为 iconify ，不然nuxt ui的图标会显示不出来
+
 相关 issue https://github.com/nuxt/icon/issues/178
 
 ```ts

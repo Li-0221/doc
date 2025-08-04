@@ -304,4 +304,7 @@ export default defineNuxtConfig({
 
 # 数据获取
 
+- useFetch 在服务端渲染时使用
+- $fetch 在客户端发送请求时使用
+
 [参考最佳实践](https://nuxt.com.cn/docs/getting-started/data-fetching#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5)
