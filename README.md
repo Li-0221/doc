@@ -220,11 +220,6 @@ JavaScript 图像压缩器。使用浏览器的原生 canvas.toBlobAPI 进行压
 
 https://www.npmjs.com/package/compressorjs
 
-## md-editor-v3
-
-vue3 环境的 Markdown 编辑器。
-
-https://github.com/imzbf/md-editor-v3
 
 ## qs
 
