@@ -27,6 +27,7 @@
 
 - engineering
 
+  - [git check](doc/engineering/git-check.md)
   - [项目规范](doc/engineering/standard.md)
   - [docker](doc/engineering/docker.md)
   - [vite](doc/engineering/vite.md)
