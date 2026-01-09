@@ -51,7 +51,6 @@ jobs:
       - name: Build with Nuxt
         run: |
           npx nuxt generate
-          touch .output/public/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
