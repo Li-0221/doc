@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/seo'],
   extends: ['docus'],
   app: {
-    baseURL: '/doc/',
+    baseURL: '/',
     head: {
       templateParams: {
         site: {
@@ -17,6 +17,15 @@ export default defineNuxtConfig({
   site: {
     url: 'https://Li-0221.github.io',
     name: 'Doc Nuxt',
+  },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: ['bash', 'diff', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'python'],
+        },
+      },
+    },
   },
   robots: {
     robotsTxt: false,
