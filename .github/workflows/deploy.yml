@@ -40,6 +40,7 @@ jobs:
       - name: Build with Nuxt
         run: |
           pnpm exec nuxt generate
+          node scripts/check-deployment.mjs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

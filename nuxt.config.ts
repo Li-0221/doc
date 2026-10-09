@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/seo'],
   extends: ['docus'],
   app: {
-    baseURL: '/',
+    baseURL: process.env.NODE_ENV === 'production' ? '/doc/' : '/',
     head: {
       templateParams: {
         site: {
@@ -17,6 +17,9 @@ export default defineNuxtConfig({
   site: {
     url: 'https://Li-0221.github.io',
     name: 'Doc Nuxt',
+  },
+  image: {
+    provider: 'none',
   },
   content: {
     build: {
