@@ -56,6 +56,18 @@ orientation: horizontal
 
   :::u-page-feature
   ---
+  icon: i-simple-icons-react
+  to: /react/nextjs
+  ---
+  #title
+  React / Next.js
+
+  #description
+  预订页面的数据边界、服务端渲染与客户端交互。
+  :::
+
+  :::u-page-feature
+  ---
   icon: i-lucide-palette
   to: /css/scss
   ---
@@ -69,13 +81,13 @@ orientation: horizontal
   :::u-page-feature
   ---
   icon: i-lucide-server
-  to: /serve/nestjs
+  to: /serve/fastapi
   ---
   #title
   后端
 
   #description
-  NestJS、Express、Nginx、MySQL 等服务端技术文档。
+  FastAPI、NestJS、Express、Nginx、MySQL 等服务端技术文档。
   :::
 
   :::u-page-feature
