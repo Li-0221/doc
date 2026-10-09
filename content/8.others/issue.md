@@ -1,13 +1,18 @@
+---
+title: 常见问题
+---
+
 ::callout{type="warning"}
 持续更新。。。
+::
 
-# Nuxt
+## Nuxt
 
-## 预渲染与环境变量问题
+### 预渲染与环境变量问题
 
-详见 [Nuxt 3 预渲染与环境变量问题总结](./vue/nuxt-prerender-env-issue.md)
+详见 [Nuxt 3 预渲染与环境变量问题总结](/vue/nuxt-prerender-env)
 
-## Nuxt UI 的 UIcon
+### Nuxt UI 的 UIcon
 
 在使用本地图标时
 
@@ -32,9 +37,9 @@
   },
 ```
 
-# vite
+## vite
 
-## base
+### base
 
 vite.config.js 中有一个 base 说用来指定打包路径的，如果部署上服务器出现页面 404，百分之九十是 base 错了
 
@@ -42,26 +47,27 @@ vite.config.js 中有一个 base 说用来指定打包路径的，如果部署�
 
 - 默认 base
 
-  <img src='https://s1.ax1x.com/2022/07/22/jOaC40.jpg'>
+  <img src='https://s1.ax1x.com/2022/07/22/jOaC40.jpg' alt='默认 base 的构建路径示例一'>
 
-  <img src='https://s1.ax1x.com/2022/07/22/jOaF3T.jpg'>
+  <img src='https://s1.ax1x.com/2022/07/22/jOaF3T.jpg' alt='默认 base 的构建路径示例二'>
 
 - 自定义 base（一般以 / 开头）
 
-  <img src='https://s1.ax1x.com/2022/07/22/jOaiCV.jpg'>
+  <img src='https://s1.ax1x.com/2022/07/22/jOaiCV.jpg' alt='自定义 base 的构建路径示例一'>
 
-  <img src='https://s1.ax1x.com/2022/07/22/jOa9Nq.jpg'>
+  <img src='https://s1.ax1x.com/2022/07/22/jOa9Nq.jpg' alt='自定义 base 的构建路径示例二'>
 
-## public
+### public
 
 public 下的文件不会参与打包，不会生成文件 hash，直接会放到 dist。
 
 可以在 public 中存放一些静态文件，如 JSON 等。
 
-## build
+### build
 
 ::callout{type="warning"}
  开发环境正常，但是到了生产环境出现了奇怪的 bug，如样式被覆盖。
+::
 
 解决办法：删除 build 下的拆分打包，因为把包拆的太多了，vite 引入包的顺序出问题了，导致样式被覆盖
 
@@ -90,12 +96,13 @@ export default defineConfig({
 });
 ```
 
-# HTTP FormData
+## HTTP FormData
 
 FormData 指的是表单数据。
 
 ::callout{type="warning"}
  使用 post 请求传递 formData 时，请求体里面放 data 是无效的
+::
 
 1. 可以使用 query 传参。
 2. 可以使用以下方式，将数据全部放入 formData
@@ -114,13 +121,13 @@ formData.forEach((value, key) => {
 });
 ```
 
-# cookie
+## cookie
 
 使用 js-cookie 存储数据时，其他操作无误的情况下，却没有存进去，大概率是由于 cookie 的大小限制。
 
-# TS
+## TS
 
-## XX 上不存在属性 xxx
+### XX 上不存在属性 xxx
 
 给 `window` 新增 `tinyMce` 属性 ts 报错：类型“Window & typeof globalThis”上不存在属性 ‘tinyMce’
 
@@ -132,7 +139,7 @@ declare interface Window {
 }
 ```
 
-## string 不能索引 object
+### string 不能索引 object
 
 元素隐式具有 “any“ 类型，因为类型为 “string“ 的表达式不能用于索引类型 “Object“。 在类型 “Object“ 上找不到具有类型为 “string“ 的参数的索引签名
 
@@ -154,9 +161,9 @@ interface Myobject {
 }
 ```
 
-# tailwind
+## tailwind
 
-## button 样式覆盖
+### button 样式覆盖
 
 使用 vant 和 element-plus 的 button 组件时，tailwind 的 button 样式会覆盖掉 vant 和 element-plus 的 button 样式
 解决办法：
@@ -192,9 +199,9 @@ build: {
 
 ```
 
-# css
+## css
 
-## 去除点击文字的竖线
+### 去除点击文字的竖线
 
 ```css
 div {
@@ -205,17 +212,17 @@ div {
 }
 ```
 
-## 文本两侧对齐
+### 文本两侧对齐
 
 text-align 的属性值常用的有：right，left，center（行内内容居中
 
 justify（向两侧对齐，最后一行无效），justify-all（与 justify 一致，强制最后一行两端对齐）等
 
-# Vant
+## Vant
 
-## Image 图片
+### Image 图片
 
-### 找不到本地资源
+#### 找不到本地资源
 
 引入本地图片可能找不到资源，解决方法：
 
@@ -239,15 +246,15 @@ const url = new URL("./assets/image.png", import.meta.url).href;
 </template>
 ```
 
-### 加载提示高度异常
+#### 加载提示高度异常
 
 image 提供的加载中提示，宽高是父容器的 100% ，给父容器设置固定宽高
 
-### lazyload
+#### lazyload
 
 image 的懒加载在 swiper 中存在问题，建议使用 swiper 自带的 [懒加载](https://swiper.com.cn/api/lazy/213.html)，注意看文档最开始的文字。
 
-## 组件注册
+### 组件注册
 
 在 `<script setup>` 中可以直接使用 Vant 组件，不需要进行组件注册。
 
@@ -272,21 +279,21 @@ const show = ref(true);
 </script>
 ```
 
-# element
+## element
 
-## el-form
+### el-form
 
-### resetField 失效
+#### resetField 失效
 
 大概率是 el-from 还没挂载，from 上的 data 就赋值了。因为 resetField 是将其值重置为初始值，初始值指的是创建 form 时 data 的值。
 
 解决办法是在 el-from 渲染之后再去赋值，可以使用 nexttick，这种 bug 尤其出现在 el-from 写在 dialog 里面的情况。因为 dialog 挂在页面上时，为了性能，默认是不加载 dialog 里面的内容，只有打开 dialog 之后才加载
 
-## 数据
+### 数据
 
 使用 element plus 时，出现奇怪的问题。可能是数据定义的问题，导致 eleemnt plus 赋值的时候出现了问题 导致失去响应式，尝试切换 ref reactive。
 
-## 样式
+### 样式
 
 覆盖 element 样式时 直接覆盖对应的样式变量，如想让 el-button 的颜色变化。
 
@@ -297,7 +304,7 @@ const show = ref(true);
 }
 ```
 
-## 树形控件
+### 树形控件
 
 element Plus 的树形控件支持自定义渲染字段，可以根据层级渲染，可以根据节点数据渲染。
 
@@ -337,12 +344,13 @@ const customLabel = (data: any, node: Node) => {
 
 根据节点数据渲染结果如下（黑色是部门，绿色是员工）：
 
-<img src='https://s1.ax1x.com/2022/10/13/xa0XZT.png'>
+<img src='https://s1.ax1x.com/2022/10/13/xa0XZT.png' alt='部门和员工节点的树形列表效果'>
 
-## 选择框
+### 选择框
 
 ::callout{type="warning"}
  使用 el-select 的时候，如果 value 要为一个对象，必须要设置 value-key，值为 value 对象里面的某个属性
+::
 
 ```vue
 <template>
@@ -358,25 +366,25 @@ const customLabel = (data: any, node: Node) => {
 </template>
 ```
 
-## 表单校验
+### 表单校验
 
-### 基本
+#### 基本
 
 - 需要定义 rules 表单校验规则
 - 每个 `el-form-item` 上要写 prop，对应得是 rules 对象内的规则
 - 触发校验 input 一般用 blur 选择框用 change
 
-<img src='https://s1.ax1x.com/2022/07/04/jYAo6A.png'>
+<img src='https://s1.ax1x.com/2022/07/04/jYAo6A.png' alt='表单基本校验效果'>
 
-### 自定义校验
+#### 自定义校验
 
 - 在自定义的校验规则里面，通过校验必须要使用 `callback()` 表示校验通过，否则校验不会出结果
 
-<img src='https://s1.ax1x.com/2022/07/04/jYATOI.png'>
+<img src='https://s1.ax1x.com/2022/07/04/jYATOI.png' alt='表单自定义校验效果'>
 
-# VueUse
+## VueUse
 
-## 暗黑模式失效
+### 暗黑模式失效
 
 - 场景：使用暗黑模式正常情况下点击按钮，html 标签上会有 class 为 dark 的切换
 - 问题：点击按钮只能切换一次
@@ -398,7 +406,7 @@ const toggleDark = useToggle(isDark);
 </script>
 ```
 
-# TS & axios
+## TS & axios
 
 在使用 TS 时，将响应的 res 赋值给变量时报错：
 
@@ -408,7 +416,7 @@ const toggleDark = useToggle(isDark);
 
 原因是 `AxiosResponse` 上并没有自己规定返回的一些字段，所以 ts 会报错，所以我们要定义一下类型
 
-## 方法 1（推荐）：
+### 方法 1（推荐）：
 
 详见 axios ts 封装
 
@@ -416,7 +424,7 @@ const toggleDark = useToggle(isDark);
 
 - 如果链接打不开，见导航栏 HTTP 下的 axios&ts
 
-## 方法 2：
+### 方法 2：
 
 在 src 目录下创建一个 compiler-vue.d.ts 文件
 
@@ -432,9 +440,9 @@ declare module "axios" {
 }
 ```
 
-# vue-router
+## vue-router
 
-## next()
+### next()
 
 - `next()` : 放行
 - `next('/login')` : 中断当前路由去 login
@@ -448,14 +456,15 @@ declare module "axios" {
 
   `replace:true` 在 to 执行的时候不允许用户点击回退，防止产生异常
 
-## onBeforeRouteLeave
+### onBeforeRouteLeave
 
 ::callout{type="warning"}
 浏览器的回退按钮无法触发该守卫
+::
 
 官方 issue 的回答是拦不住，用户多次点击回退不能把他困在当前页面
 
-## 嵌套路由
+### 嵌套路由
 
 ```javascript
 
@@ -485,39 +494,41 @@ declare module "axios" {
  
 ```
 
-## 路由触发同名方法
+### 路由触发同名方法
 
 情景：
 
 - 在 vue-router 中的路由里面，有重定向到 `'/login'` 的情况
 - 在请求接口的方法里面有一个 `login` 的方法
 
-  <img src="https://s1.ax1x.com/2022/07/06/jUvm0U.png">
+  <img src="https://s1.ax1x.com/2022/07/06/jUvm0U.png" alt="路由中定义 login 路径">
 
-  <img src="https://s1.ax1x.com/2022/07/06/jUvVXV.png">
+  <img src="https://s1.ax1x.com/2022/07/06/jUvVXV.png" alt="请求方法命名为 login">
 
 问题：
 
 ::callout{type="warning"}
 本地运行时正常，打包发布后，进入 `/login` 页面，只要一进入就调用 `login` 方法
+::
 
 解决：产生问题的原因可能是由于编译之后，方法名与 router 的 path 名称一致，改掉方法名
 
-<img src="https://s1.ax1x.com/2022/07/06/jUvemT.png">
+<img src="https://s1.ax1x.com/2022/07/06/jUvemT.png" alt="更改请求方法名称后的代码">
 
-# async&await
+## async&await
 
-## 问题 1：
+### 问题 1：
 
 - 做链式的异步请求时，async 写在了在外面的方法名前面
 - await 后面跟的返回值不是 Promise，而是一个值
 
-<img src='https://s1.ax1x.com/2022/04/28/LXSlSH.png' height=500></img>
+<img src='https://s1.ax1x.com/2022/04/28/LXSlSH.png' alt='链式异步请求示例' height=500 />
 
-## 问题 2：
+### 问题 2：
 
 ::callout{type="warning"}
 await 只能拿到 then 里面的值，如果请求出错 promise 会直接抛出异常，如果不需要做额外处理，可以不写 try catch
+::
 
 ```javascript
 const getUserList = async () => {
@@ -526,7 +537,7 @@ const getUserList = async () => {
 };
 ```
 
-# setTimeout 0
+## setTimeout 0
 
 将 `setTimeout` 的延迟时间设置为 0 ，是为了将函数放在异步队列，等同步任务完成才执行
 
@@ -534,9 +545,9 @@ const getUserList = async () => {
 setTimeout(() => {}, 0);
 ```
 
-# forEach 能否改变数组
+## forEach 能否改变数组
 
-## 基本类型
+### 基本类型
 
 - 数组元素是基本类型，不改变原数组
 
@@ -548,7 +559,7 @@ array.forEach((ele) => {
 console.log(array); // [1,2,3,4]
 ```
 
-## 引用类型
+### 引用类型
 
 - 数组元素是引用类型，改变原数组
 
@@ -595,13 +606,13 @@ changeItemArr.forEach((ele) => {
 console.log(changeItemArr); // [{name: "wxw", age: 22},{name: "wxw2", age: 33}]
 ```
 
-## 总结
+### 总结
 
 - 基本类型我们当次循环拿到的`ele`，只是`forEach`给在另一个地方复制创建新元素，是和原数组这个元素没有半毛钱联系的！所以，我们使命给循环拿到的 ele 赋值都是无用功！
 - 引用类型真正的数据是保存在堆内存，栈内只保存了对象的变量以及对应的堆的地址，所以操作 Object 其实就是直接操作了原数组对象本身。
 - `forEach` 的基本原理也是 for 循环，使用`arr[index]`的形式赋值改变，无论什么就都可以改变了。
 
-# 对象
+## 对象
 
 ```javascript
 // 对象的键可以是数字、字符串、变量、symbol，但是都会被转化为字符串
@@ -621,7 +632,7 @@ console.log(name.A); // aa
 console.log(name[xx]); // 王五
 ```
 
-# deep 样式穿透
+## deep 样式穿透
 
 使用`:deep()`时,他的父级必须是当前 vue 文件定义的某个选择器，如下列的`.my-dialog `
 
@@ -633,19 +644,19 @@ console.log(name[xx]); // 王五
 }
 ```
 
-# 深拷贝
+## 深拷贝
 
 遇到数组、对象（引用类型）赋值时一定要考虑是否需要深拷贝
 
 问题：红圈处开始时直接赋值，在后面 `arrTemp` 使用了 `splice` 方法，由于此时赋值的时内存地址，导致 `taskData.value` 也发生了改变
 
-<img src='https://s1.ax1x.com/2022/07/22/jOagVs.jpg' >
+<img src='https://s1.ax1x.com/2022/07/22/jOagVs.jpg' alt='数组引用赋值后使用 splice 的问题'>
 
-# try catch
+## try catch
 
 问题：使用 try catch 捕获异常，抛出错误时 报错 `(local var) error: unknown`，或者其他错误。
 
-对 Promise 使用 async awiat 时不需要使用 try catch。
+使用 `async` / `await` 时，可以用 `try...catch` 处理异步函数抛出的错误；也可以将错误交给调用方处理。
 
 ```typescript
 try {
@@ -665,9 +676,9 @@ try {
   }
 ```
 
-# iframe 页面通信
+## iframe 页面通信
 
-## 子页面触发父页面事件
+### 子页面触发父页面事件
 
 ```javascript
 // iframe
@@ -683,21 +694,21 @@ window.addEventListener(
 );
 ```
 
-## 子页面改变父页面 url
+### 子页面改变父页面 url
 
 ```typescript
 (top as Window).window.location.href = "url";
 ```
 
-# 浏览器预设样式 user agent stylesheet
+## 浏览器预设样式 user agent stylesheet
 
 场景: 使用 element 的输入框，当 Google 自动填充密码时，会出现背景色
 
 原因：由于浏览器的预设样式，导致输入框的背景色变化
 
-<img src='https://s1.ax1x.com/2022/07/02/j1NhlV.png'>
+<img src='https://s1.ax1x.com/2022/07/02/j1NhlV.png' alt='浏览器自动填充输入框的背景色示例一'>
 
-<img src='https://s1.ax1x.com/2022/07/02/j1NfS0.png'>
+<img src='https://s1.ax1x.com/2022/07/02/j1NfS0.png' alt='浏览器自动填充输入框的背景色示例二'>
 
 - 写入如下 css 覆盖
 
@@ -712,4 +723,4 @@ input:-internal-autofill-selected {
 
 - 更改之后的输入框
 
-<img src='https://s1.ax1x.com/2022/07/02/j1UOEQ.png'>
+<img src='https://s1.ax1x.com/2022/07/02/j1UOEQ.png' alt='覆盖自动填充样式后的输入框'>
