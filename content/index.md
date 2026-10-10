@@ -35,6 +35,17 @@ orientation: horizontal
   ---
   GitHub
   :::
+
+  :::u-button
+  ---
+  color: neutral
+  size: xl
+  to: /resume
+  variant: outline
+  icon: i-lucide-user-round
+  ---
+  查看简历
+  :::
 ::
 
 ::u-page-section
