@@ -40,7 +40,7 @@ orientation: horizontal
   ---
   color: neutral
   size: xl
-  to: /resume
+  to: https://resume.inwe-ai.com/
   variant: outline
   icon: i-lucide-user-round
   ---

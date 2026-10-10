@@ -33,10 +33,6 @@ export default defineNuxtConfig({
   robots: {
     robotsTxt: false,
   },
-  linkChecker: {
-    // The prerender server cannot resolve static files through the GitHub Pages base path.
-    excludeLinks: ['/doc/li-li-resume-v4.pdf'],
-  },
   nitro: {
     preset: 'github-pages',
   },
